@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "515280392249",
+    "firebase_url": "https://snapcalender.firebaseio.com",
+    "project_id": "snapcalender",
+    "storage_bucket": "snapcalender.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515280392249:android:da7c94d33f88aca7",
+        "android_client_info": {
+          "package_name": "com.example.johnny.snapcalendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515280392249-v80upeeumq8pihth1ppl48nf9heentu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCMaGco91lgZ7tuWXkqLF97By3Ct9Pk-Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

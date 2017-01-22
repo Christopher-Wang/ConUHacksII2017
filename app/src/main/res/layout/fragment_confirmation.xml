@@ -17,6 +17,12 @@
         android:textSize="20dp" />
 
     <Button
+        android:id="@+id/interested"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Interested" />
+
+    <Button
         android:id="@+id/dismiss"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

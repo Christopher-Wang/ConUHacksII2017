@@ -13,7 +13,10 @@ import android.widget.ImageView;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
+import java.io.IOException;
 import java.text.ParseException;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,8 +26,9 @@ public class MainActivity extends AppCompatActivity {
     Bitmap mphoto;
     TextRecognizer textRecognizer;
 
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mimageView = (ImageView) this.findViewById(R.id.image_from_camera);
@@ -37,12 +41,13 @@ public class MainActivity extends AppCompatActivity {
             mimageView.setImageBitmap(bitmap);
             try {
                 SparseArray<TextBlock> foo = getText(bitmap);
+
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-
             FragmentManager fm = getFragmentManager();
             ConfirmationFragment dialogFragment = new ConfirmationFragment ();
+           // dialogFragment.getDate(foo.get(0).getValue());
             dialogFragment.getPoster(bitmap);
             dialogFragment.show(fm, "Sample Fragment");
         }
