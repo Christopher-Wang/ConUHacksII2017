@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             String bar=t.toString();
             text.setText(bar);
             title = output.get(0);
-            GoogleCalendar calendar = new GoogleCalendar();
+//            GoogleCalendar calendar = new GoogleCalendar();
 //            GoogleCalendar calendar = new GoogleCalendar()
 //            DateTime startDateTime = calendar.startDateTime(output[0]);
 //            EventDateTime start = calendar.startEventDateTime(startDateTime, "America/New_York");
