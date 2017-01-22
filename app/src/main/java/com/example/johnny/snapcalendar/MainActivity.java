@@ -1,5 +1,6 @@
 package com.example.johnny.snapcalendar;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -39,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
+
+            FragmentManager fm = getFragmentManager();
+            ConfirmationFragment dialogFragment = new ConfirmationFragment ();
+            dialogFragment.getPoster(bitmap);
+            dialogFragment.show(fm, "Sample Fragment");
         }
 
     }
