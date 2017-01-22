@@ -42,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
-                Toast.makeText(getApplicationContext(), ""+dayOfMonth, 0).show();// TODO Auto-generated method stub
-
+                Toast.makeText(getApplicationContext(), ""+dayOfMonth, 0).show();//
             }
         });
 
@@ -62,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
            // dialogFragment.getDate(foo.get(0).getValue());
             dialogFragment.getPoster(bitmap);
             dialogFragment.show(fm, "Sample Fragment");
+
         }
 
     }

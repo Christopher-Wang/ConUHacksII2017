@@ -5,10 +5,12 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,13 +22,16 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Date;
 
 public class ConfirmationFragment extends DialogFragment {
     String date;
     Bitmap poster;
+    public static int eventDate = 0;
     FirebaseStorage storage = FirebaseStorage.getInstance();
     StorageReference storageReference = storage.getReferenceFromUrl("gs://snapcalender.appspot.com");
     StorageReference posterStorageReference = storageReference.child("Poster");
+
 
     public Bitmap getPoster(Bitmap bitmap) {
         poster = bitmap;
@@ -59,6 +64,9 @@ public class ConfirmationFragment extends DialogFragment {
         });
         dismiss();
     }
+    void onDateChangeListener(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth){
+        eventDate = dayOfMonth;
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -67,6 +75,16 @@ public class ConfirmationFragment extends DialogFragment {
         Button dismiss = (Button) rootView.findViewById(R.id.dismiss);
         Button interested = (Button) rootView.findViewById(R.id.interested);
         ImageView preview = (ImageView) rootView.findViewById(R.id.posterView);
+        DatePicker datePicker = (DatePicker) rootView.findViewById(R.id.date_picker);
+        datePicker.init(2017, 0, 22, new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker datePicker, int year, int month, int dayOfMonth) {
+               eventDate = dayOfMonth;
+
+            }
+        });
+
+        Log.d("" + ConfirmationFragment.eventDate, "dbhjsakbdhjlsagdbjkslabdjskalbdcsakldbsajkldbsajkldbsajkldbajslbdjasklbdjlkas");
       //  TextView displayDate = (TextView) rootView.findViewById(R.id.dateView);
 
         //displayDate.setText(getDate(date));
