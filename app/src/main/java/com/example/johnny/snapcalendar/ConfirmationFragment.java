@@ -67,9 +67,9 @@ public class ConfirmationFragment extends DialogFragment {
         Button dismiss = (Button) rootView.findViewById(R.id.dismiss);
         Button interested = (Button) rootView.findViewById(R.id.interested);
         ImageView preview = (ImageView) rootView.findViewById(R.id.posterView);
-        TextView displayDate = (TextView) rootView.findViewById(R.id.dateView);
+      //  TextView displayDate = (TextView) rootView.findViewById(R.id.dateView);
 
-        displayDate.setText(getDate(date));
+        //displayDate.setText(getDate(date));
         preview.setImageBitmap(poster);
 
         dismiss.setOnClickListener(new View.OnClickListener() {
